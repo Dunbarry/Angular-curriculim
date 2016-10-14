@@ -1,0 +1,43 @@
+body{
+  background-color: #272D2D;
+  color:#EDF5FC;
+}
+
+span{
+  display:flex;
+  flex-flow: row;
+}
+
+p{
+  display:inline;
+}
+
+.mainContain{
+  display:flex;
+  flex-flow: column;
+  padding: 3vw;
+}
+
+.repeatContain{
+  display: flex;
+  flex-flow: row;
+  margin-bottom: .5vw;
+}
+
+.postContain{
+  border: .25vw ridge #B8C5D6;
+  padding: 2vw;
+  width: 50%;
+}
+
+.imageContain{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width:50%;
+  max-width: 50%;
+  height: 25vw;
+  max-height: 25vw;
+  overflow: hidden;
+  border-radius:50%;
+}

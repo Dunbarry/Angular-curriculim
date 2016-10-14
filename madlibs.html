@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="madApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Madlibs Yall</title>
+  </head>
+  <body>
+    <div style="width: 450px" ng-controller='madController'>
+      <h1>Would You Like to Play A Game?</h1>
+      <label for='yourName'>What is your name?</label>
+      <div>
+        <input type='text' name='yourName' ng-model='field.name'></input>
+      </div>
+        <label for='dateBorn'>What year were you born?</label>
+      <div>
+        <input type='text' name='dateBorn' ng-model='field.dob'></input>
+      </div>
+      <label for='mammalSelect'>What is your favorite animal?</label>
+      <div>
+        <input type='text' name='mammalSelect' ng-model='field.mammal'>
+      </div>
+      <label for='verbage'>Choose a verb!</label>
+      <div>
+        <input type='text' name='verbage' ng-model='field.verb'></input>
+      </div>
+      <label for='yoMamma'>Choose a single word insult!</label>
+      <div>
+        <input type='text' name='yoMamma' ng-model='field.insult' placeholder='eg Ugly or Stupid'></input>
+      </div>
+      <button ng-click='text = 2' ng-init:'text = 1'>Lib me, baby!{{text}}</button>
+
+      <p ng-show='text == 2'>There once was a tiny {{field.mammal}}. And on this day in {{(field.dob-0)+1}}, the {{field.mammal}} decided it was due for a nice, long {{field.verb}}. As it did so, it spotted a {{field.insult}} baby. That was you, {{field.name}}. You were a {{field.insult}} baby. Oh, and the {{field.mammal}} did some other stuff.</p>
+      <button ng-click='clearField(); text = 1' ng-show='text == 2'>MOAR</button>
+    </div>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+    <script src='./madlibs.js'></script>
+  </body>
+</html>

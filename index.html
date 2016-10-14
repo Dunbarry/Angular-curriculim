@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ greeting }} World</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body ng-init="names=['Harry', 'Harry', 'Ron', 'Hermione', 'Sirius', 'Hedwig', 'Tonks']">
+    <p>Say something awesome!!</p>
+    <div>
+      <input type="text" ng-model="greeting" ng-init="greeting='hello '"></input>
+    </div>
+    <p>{{greeting}} world!</p>
+
+    <div>
+      <input type='text' placeholder='What is your name?' ng-model='name'></input>
+    </div>
+    <h1>My name is: {{name}}</h1>
+
+    <div>
+      <p>Preferred pet?</p>
+      <select placeholder='Choose one' ng-model='choice'>
+        <option value='Cats'>Cats</option>
+        <option value='Dogs'>Dogs</option>
+        <option value='Neither'>Neither</option>
+      </select>
+    </div>
+    <h2>I love {{choice}} <3</h2>
+  <div>
+  <h1>{{3.14159265359|currency:"€"}}</h1>
+  </div>
+  <div>
+    <input type='text' placeholder='Speak your mind!' ng-model='thoughts'></input>
+    <h1>I am yelling: {{thoughts|uppercase}}</h1>
+    <h1>Not yelling:  {{thoughts|lowercase}}
+  </div>
+  <div>
+    {{3.14159265359 | number:3}}
+    {{3.14159265359 | number:6}}
+    {{3.14159265359 | number:1}}
+  </div>
+  <div>
+    <p>Preferred pet?</p>
+    <select ng-model='digitChoice'>
+      <option value='1'>1</option>
+      <option value='2'>2</option>
+      <option value='3'>3</option>
+      <option value='4'>4</option>
+      <option value='5'>5</option>
+      <option value='6'>6</option>
+      <option value='7'>7</option>
+    </select>
+    <h2>
+      <ng-pluralize count="digitChoice"
+                    when="{'1': 'Enjoy yo digit!',
+                       'other': 'Enjoy yo digits!'}">
+      </ng-pluralize>
+    </h2>
+    <h2>{{3.14159265359 | number:digitChoice}}</h2>
+  </div>
+
+  <div>
+    <h1>Tip Top Tipper </h1>
+    <span>How much was the meal?
+      <input type="text" placeholder='00.00' ng-model='price'></input>
+    <span>
+    <span>How much would you like to tip?
+      <select ng-init="percent ='.1'" ng-model='percent'>
+        <option value='.1'>10%</option>
+        <option value='.15'>15%</option>
+        <option value='.2'>20%</option>
+      </select>
+    </span>
+    <div>
+      <h3>Subtotal:{{price|currency}}</h3>
+      <h3>Tip:{{price*percent|currency}}</h3>
+    </div>
+  </div>
+
+  <div>{{this}}</div>
+
+  <div style="width: 450px">
+    <h1>Would You Like to Play A Game?</h1>
+    <label for='yourName'>What is your name?</label>
+    <input type='text' name='yourName' ng-model='name'></input>
+    <br>
+    <label for='dateBorn'>What year were you born?</label>
+    <input type='text' name='dateBorn' ng-model='dob'></input>
+    <br>
+    <label for='mammalSelect'>What is your favorite animal?</label>
+    <input type='text' name='mammalSelect' ng-model='mammal'>
+    <br>
+    <label for='verbage'>Choose a verb!</label>
+    <input type='text' name='verbage' ng-model='verb'></input>
+    <br>
+    <label for='yoMamma'>Choose a single word insult!</label>
+    <input type='text' name='yoMamma' ng-model='insult' placeholder='eg Ugly or Stupid'></input>
+    <br>
+    <p>There once was a tiny {{mammal}}. And on this day in {{(dob-0)+1}}, the {{mammal}} decided it was due for a nice, long {{verb}}. As it did so, it spotted a {{insult}} baby. That was you, {{name}}. You were a {{insult}} baby. Oh, and the {{mammal}} did some other stuff.</p>
+  </div>
+  <!-- <ul ng-repeat='name in names'>
+    <li>{{name}}</li>
+  </ul> -->
+  <ul ng-repeat='name in names track by $index'> <!--Track by index allows for repeats in the array-->
+    <li>{{name}}</li>
+  </ul>
+
+  <div ng-show='3 + 4 == 5'>
+    3 + 4 isn't 5, don't show
+  </div>
+
+  <div ng-show='3 + 4 == 7'>
+    3 + 4 is 7, do show
+  </div>
+
+  <div ng-hide='3 + 4 == 5'>
+      3 + 4 isn't 5, don't hide
+  </div>
+
+  <div ng-hide='3 + 4 == 7'>
+    3 + 4 is 7, do hide
+  </div>
+
+  <div>
+    <h1>Sign Up!</h1>
+    <input type='password' ng-model='password'></input>
+    <p ng-class='{good: password.length > 5, bad: password.length <= 5}'>Your password is {{password.length}}
+    <ng-pluralize count='password.length'
+                  when="{'1': 'character',
+                  'other': 'characters'}">
+    </ng-pluralize></p>
+    <div ng-show='password.length > 5'>
+      <button>Sign Up!</button>
+    </div>
+    <div ng-show='password.length <= 5'>
+      <p>Password is invalid!</p>
+    </div>
+  </div>
+  <br>
+
+  <div ng-class='{highlight: 4 + 4 == 8}'> 4 + 4 = 8</div>
+  <div ng-class='{highlight: 4 + 4 == 10}'>4 + 4 = 10</div>
+
+
+
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+  </body>
+</html>

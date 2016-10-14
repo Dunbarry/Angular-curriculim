@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app='cloneddit'>
+  <head>
+    <meta charset="utf-8">
+    <title>cloneddit</title>
+    <link rel="stylesheet" type="text/css" href="cloneddit.css">
+  </head>
+  <body ng-controller="clonedditController">
+    <div class="mainContain">
+      <div ng-repeat='post in posts' class="repeatContain">
+        <div class="postContain">
+          <div>
+            <h1>{{post.title}}</h1>
+            <h4>{{post.author}}</h4>
+          </div>
+          <div>
+            {{post.content}}
+          </div>
+          <div>
+            {{post.time | date:"MM/dd/yyyy 'at' h:mma"}}
+          </div>
+          <div ng-repeat='comment in post.comments' class='commentContain'>
+            <div>
+              {{comment.content}}
+            </div>
+            <div>
+              <span>
+                <p>{{comment.author}}</p>
+                <p>{{comment.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class='imageContain'>
+          <img ng-src='{{post.image}}' alt='{{post.imageAlt}}'>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Content -->
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
+    <script src='./cloneddit.js'></script>
+  </body>
+</html>
