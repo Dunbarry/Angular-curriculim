@@ -14,7 +14,7 @@ app.controller("clonedditController", function($scope){
       time: new Date(),
       comments:[
         {
-        id:101,
+        id:1,
         author:'Major Tom',
         content:'I\'m standing in the door, and I\'m floating in a most peculiar way.',
         time:new Date()
@@ -31,13 +31,13 @@ app.controller("clonedditController", function($scope){
       time:new Date(),
       comments:[
         {
-          id:102,
+          id:1,
           author:'Ground Control',
           content:'She knows.',
           time:new Date(),
         },
         {
-          id:103,
+          id:2,
           author:'Ground Control',
           content:'Your circuit\'s dead; there\'s something wrong. Can you hear me Major Tom?',
           time:new Date(),
@@ -54,7 +54,7 @@ app.controller("clonedditController", function($scope){
       time:new Date(),
       comments:[
         {
-          id:104,
+          id:1,
           author:'Moscow',
           content:'To Sputnik 2: I think we\'re losing you. Your life signs are fading; we can\'t really say that we\'re surprised.',
           time:new Date(),

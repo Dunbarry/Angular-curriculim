@@ -8,26 +8,52 @@ span{
   flex-flow: row;
 }
 
-p{
-  display:inline;
+div > span{
+  margin-top: 1vw;
+  background-color: #A39BA8;
+}
+
+.bottomKill{
+  margin-bottom: 0vw;
+}
+
+.topKill{
+  margin-top: 0vw;
+}
+
+.bottomSpacer{
+  margin-bottom: 1.5vw;
 }
 
 .mainContain{
   display:flex;
   flex-flow: column;
-  padding: 3vw;
+  padding: 2.5vw;
 }
 
 .repeatContain{
   display: flex;
   flex-flow: row;
-  margin-bottom: .5vw;
 }
 
 .postContain{
   border: .25vw ridge #B8C5D6;
   padding: 2vw;
   width: 50%;
+  margin-bottom: 1.5vw;
+}
+
+.commentContain{
+  padding-left: 3.5vw;
+}
+
+.commentContain > div{
+  margin-bottom: .5vw;
+}
+
+.metaData{
+  display: flex;
+  justify-content: space-between;
 }
 
 .imageContain{

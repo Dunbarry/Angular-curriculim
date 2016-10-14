@@ -9,25 +9,25 @@
     <div class="mainContain">
       <div ng-repeat='post in posts' class="repeatContain">
         <div class="postContain">
-          <div>
-            <h1>{{post.title}}</h1>
-            <h4>{{post.author}}</h4>
-          </div>
-          <div>
-            {{post.content}}
-          </div>
-          <div>
-            {{post.time | date:"MM/dd/yyyy 'at' h:mma"}}
+          <div class='bottomSpacer'>
+            <div>
+              <h1 class="topKill">{{post.title}}</h1>
+            </div>
+            <div class='metaData'>
+              <p>{{post.author}}</p>
+              <p>{{post.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+            </div>
+            <div>
+              {{post.content}}
+            </div>
           </div>
           <div ng-repeat='comment in post.comments' class='commentContain'>
             <div>
-              {{comment.content}}
-            </div>
-            <div>
-              <span>
-                <p>{{comment.author}}</p>
-                <p>{{comment.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>
-              </span>
+              <div class="metaData">
+                <p class="bottomKill">{{comment.author}}</p>
+                <p class="bottomKill">{{comment.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+              </div>
+              <p class="topKill bottomKill">&#8594; {{comment.content}}</p>
             </div>
           </div>
         </div>
