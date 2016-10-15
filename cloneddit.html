@@ -11,7 +11,7 @@
         <div class="postContain">
           <div class='bottomSpacer'>
             <div>
-              <h1 class="topKill">{{post.title}}</h1>
+              <h1 class="topKill">< {{post.title}} ></h1>
             </div>
             <div class='metaData'>
               <p>{{post.author}}</p>
@@ -21,8 +21,12 @@
               {{post.content}}
             </div>
           </div>
+          <div class="commentButtons">
+            <button class="viewButton" ng-click="commentControl()">See Comments</button>
+            <button class="makeButton" ng-click=""></button>
+          </div>
           <div ng-repeat='comment in post.comments' class='commentContain'>
-            <div>
+            <div ng-show="commentHold">
               <div class="metaData">
                 <p class="bottomKill">{{comment.author}}</p>
                 <p class="bottomKill">{{comment.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>

@@ -63,5 +63,14 @@ app.controller("clonedditController", function($scope){
       image:'https://s-media-cache-ak0.pinimg.com/originals/f3/93/5e/f3935ed40e62c27518e9004010b685a5.jpg',
       imageAlt:'Laika'
     }
-  ]
+  ];
+  $scope.commentHold= false;
+  $scope.commentControl= function(){
+    if($scope.commentHold===false){
+      $scope.commentHold= true;
+    }
+    else if($scope.commentHold===true){
+      $scope.commentHold= false;
+    }
+  }
 })
