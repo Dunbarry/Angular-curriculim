@@ -7,7 +7,7 @@ var app = angular.module("cloneddit", []);
 app.controller("clonedditController", function($scope){
   $scope.posts=[
     {
-      id:1,
+      id:0,
       title:'To Major Tom',
       author:'Ground Control',
       content:'You\'ve really made the grade. And the papers want to know who\'s shirt you wear. Now it\'s time to leave the capsule if you dare.',
@@ -21,10 +21,11 @@ app.controller("clonedditController", function($scope){
         }
       ],
       image:'http://www.kratostts.com/~/media/kratosdefense/images/interior/2%20column%20header%20images/satellite-communications.jpg',
-      imageAlt:'Satelite field'
+      imageAlt:'Satelite field',
+      commentHold: 1
     },
     {
-      id:2,
+      id:1,
       title:'To Ground Control',
       author:'Major Tom',
       content:'Though I\'m passed 100,000 miles, I\'m feeling very still. And I think my spaceship knows which way to go. Tell my wife I love her very much.',
@@ -44,10 +45,11 @@ app.controller("clonedditController", function($scope){
         }
       ],
       image:'https://res.cloudinary.com/teepublic/image/private/s--6mhaHjOD--/t_Preview/b_rgb:262c3a,c_limit,f_jpg,h_630,q_90,w_630/v1446077807/production/designs/25252_0.jpg',
-      imageAlt:'Astronaut on moon swing'
+      imageAlt:'Astronaut on moon swing',
+      commentHold: 1
     },
     {
-      id:3,
+      id:2,
       title:'Hello',
       author:'Sputnik 2',
       content:'I am recieving you. Thanks for the dog food. I\'m somewhere above you now. Guess what Malashenkov: I took the collar off. I\'m holding my own leash and walking myself outside this door. I don\'t think I want to be your good dog anymore.',
@@ -61,16 +63,11 @@ app.controller("clonedditController", function($scope){
         }
       ],
       image:'https://s-media-cache-ak0.pinimg.com/originals/f3/93/5e/f3935ed40e62c27518e9004010b685a5.jpg',
-      imageAlt:'Laika'
+      imageAlt:'Laika',
+      commentHold: 1
     }
   ];
-  $scope.commentHold= false;
-  $scope.commentControl= function(){
-    if($scope.commentHold===false){
-      $scope.commentHold= true;
-    }
-    else if($scope.commentHold===true){
-      $scope.commentHold= false;
-    }
+  $scope.alter=function(postToAlter){
+    $scope.posts[postToAlter].commentHold=$scope.posts[postToAlter].commentHold+1;
   }
 })

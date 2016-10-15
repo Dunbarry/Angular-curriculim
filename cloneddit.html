@@ -22,11 +22,11 @@
             </div>
           </div>
           <div class="commentButtons">
-            <button class="viewButton" ng-click="commentControl()">See Comments</button>
+            <button class="viewButton" ng-click="alter(id)" ng-init='id=post.id'>See Comments</button>
             <button class="makeButton" ng-click=""></button>
           </div>
           <div ng-repeat='comment in post.comments' class='commentContain'>
-            <div ng-show="commentHold">
+            <div ng-show="post.commentHold % 2 == 0">
               <div class="metaData">
                 <p class="bottomKill">{{comment.author}}</p>
                 <p class="bottomKill">{{comment.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>
