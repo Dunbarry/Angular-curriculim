@@ -14,7 +14,7 @@ app.controller("clonedditController", function($scope){
       time: new Date(),
       comments:[
         {
-        id:1,
+        id:0,
         author:'Major Tom',
         content:'I\'m standing in the door, and I\'m floating in a most peculiar way.',
         time:new Date()
@@ -34,13 +34,13 @@ app.controller("clonedditController", function($scope){
       time:new Date(),
       comments:[
         {
-          id:1,
+          id:0,
           author:'Ground Control',
           content:'She knows.',
           time:new Date(),
         },
         {
-          id:2,
+          id:1,
           author:'Ground Control',
           content:'Your circuit\'s dead; there\'s something wrong. Can you hear me Major Tom?',
           time:new Date(),
@@ -60,7 +60,7 @@ app.controller("clonedditController", function($scope){
       time:new Date(),
       comments:[
         {
-          id:1,
+          id:0,
           author:'Moscow',
           content:'To Sputnik 2: I think we\'re losing you. Your life signs are fading; we can\'t really say that we\'re surprised.',
           time:new Date(),
@@ -73,10 +73,22 @@ app.controller("clonedditController", function($scope){
       imageAlt:'Laika'
     }
   ];
+
+  // COMMENTS
   $scope.commentShow=function(postToAlter){
     $scope.posts[postToAlter].commentHold=$scope.posts[postToAlter].commentHold+1;
   };
   $scope.commentFormShow=function(formToReveal){
     $scope.posts[formToReveal].makeComment=$scope.posts[formToReveal].makeComment+1;
-  }
+  };
+  $scope.addComment=function(postCommentedOn){
+    $scope.posts[postCommentedOn].comments.push($scope.newComment);
+    $scope.posts[postCommentedOn].makeComment=$scope.posts[postCommentedOn].makeComment+1;
+  };
+  $scope.newComment={
+    id:"",
+    author:"",
+    content:"",
+    time:new Date(),
+  };
 })

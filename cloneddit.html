@@ -24,18 +24,19 @@
           <div class="commentButtons">
             <button class="viewButton" ng-click="commentShow(id)" ng-init='id=post.id'>Recieve</button>
             <button class="makeButton" ng-click="commentFormShow(id)">Transmit</button>
-            {{}}
           </div>
           <div class='makeComment' ng-show="post.makeComment % 2 == 0">
             <h1>Comment</h1>
-            <label for='username'>Username</label>
+            <input type="number" value="post.commentCount" ng-model='newComment.id' hidden></input>
+            <label for='author'>Username</label>
             <div>
-              <input type='text' name='username' ng-model='commentAdd.username'></input>
+              <input type='text' name='author' ng-model='newComment.author'></input>
             </div>
-              <label for='commentText'>Your Comment?</label>
+              <label for='commentContent'>Your Comment?</label>
             <div>
-              <textarea rows='4' cols='50' name='commentText' ng-model='commentAdd.content'></textarea>
+              <textarea rows='4' cols='50' name='commentContent' ng-model='newComment.content'></textarea>
             </div>
+            <button ng-click="addComment(id)"></button>
           </div>
           <div ng-repeat='comment in post.comments' class='commentContain'>
             <div ng-show="post.commentHold % 2 == 0">
