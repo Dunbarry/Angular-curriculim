@@ -1,6 +1,4 @@
 console.log('Drone Online')
-var postIdTrack=3;
-var commentIdTrack=104
 
 var app = angular.module("cloneddit", []);
 
@@ -49,7 +47,7 @@ app.controller("clonedditController", function($scope){
       commentCount: 2,
       commentHold: 1,
       makeComment: 1,
-      image:'https://res.cloudinary.com/teepublic/image/private/s--6mhaHjOD--/t_Preview/b_rgb:262c3a,c_limit,f_jpg,h_630,q_90,w_630/v1446077807/production/designs/25252_0.jpg',
+      image:'http://3.bp.blogspot.com/-1wwXUsF55nI/VavipPh27BI/AAAAAAAAAa4/zE-H53Vg4EE/s1600/pale%2Bblue%2Bdot.jpg',
       imageAlt:'Astronaut on moon swing'
     },
     {
@@ -74,16 +72,50 @@ app.controller("clonedditController", function($scope){
     }
   ];
 
+  // POSTS
+  $scope.idTrack=4;
+  $scope.postForm=false;
+  $scope.postFormReveal=function(){
+    if($scope.postForm===false){
+      $scope.postForm=true;
+    }
+    else if($scope.postForm=true){
+      $scope.postForm=false;
+    }
+  };
+  $scope.addPost={
+    id:$scope.idTrack,
+    title:"",
+    author:"",
+    content:"",
+    time: new Date(),
+    comments:[],
+    commentCount: 1,
+    commentHold: 1,
+    makeComment: 1,
+    image:"",
+    imageAlt:""
+  };
+  $scope.newPost=function(){
+    console.log($scope.addPost)
+    $scope.posts.push($scope.addPost);
+    $scope.idTrack=$scope.idTrack+1;
+    $scope.postForm=false;
+  };
+
   // COMMENTS
   $scope.commentShow=function(postToAlter){
     $scope.posts[postToAlter].commentHold=$scope.posts[postToAlter].commentHold+1;
   };
   $scope.commentFormShow=function(formToReveal){
+    formToReveal=formToReveal-0
+    console.log(typeof formToReveal)
     $scope.posts[formToReveal].makeComment=$scope.posts[formToReveal].makeComment+1;
   };
   $scope.addComment=function(postCommentedOn){
     $scope.posts[postCommentedOn].comments.push($scope.newComment);
     $scope.posts[postCommentedOn].makeComment=$scope.posts[postCommentedOn].makeComment+1;
+    // $scope.posts[postCommentedOn].commentCount=$scope.posts[postCommentedOn].commentCount+1;
   };
   $scope.newComment={
     id:"",
