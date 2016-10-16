@@ -12,6 +12,14 @@ input{
   margin-bottom: 1.5vw;
 }
 
+button:hover{
+  cursor: pointer;
+}
+
+select:hover{
+  cursor: pointer;
+}
+
 .commentButtons{
   display: flex;
   flex-flow: row;
@@ -121,4 +129,20 @@ input{
 
 .down{
   background-color: red;
+}
+
+.viewButton{
+  background-color:#EDF5FC;
+  height:2vw;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  margin-top: 1.5vw;
+}
+
+.makeButton{
+  background-color:#EDF5FC;
+  height:2vw;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  margin-top: 1.5vw;
 }
