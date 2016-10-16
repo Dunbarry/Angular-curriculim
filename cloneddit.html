@@ -30,7 +30,7 @@
       <div>
         <input type='text' name='postAlt' ng-model='addPost.imageAlt'></input>
       </div>
-      <button ng-click="newPost()">Send</button>
+      <button ng-click="newPost()">Send Transmission</button>
     </div>
     <div class="mainContain">
       <div ng-repeat='post in posts' class="repeatContain bottomSpacer">
@@ -62,7 +62,7 @@
             <div>
               <textarea rows='4' cols='50' name='commentContent' ng-model='newComment.content'></textarea>
             </div>
-            <button ng-click="addComment(id)"></button>
+            <button ng-click="addComment(id)">Send Reply</button>
           </div>
           <div ng-repeat='comment in post.comments' class='commentContain'>
             <div ng-show="post.commentHold % 2 == 0">
