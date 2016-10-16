@@ -57,7 +57,7 @@ app.controller("clonedditController", function($scope){
       title:'Hello',
       author:'Sputnik 2',
       content:'I am recieving you. Thanks for the dog food. I\'m somewhere above you now. Guess what Malashenkov: I took the collar off. I\'m holding my own leash and walking myself outside this door. I don\'t think I want to be your good dog anymore.',
-      time:new Date(),
+      time:'10/15/2016 at 1:16PM',
       votes: 3,
       comments:[
         {
@@ -67,7 +67,7 @@ app.controller("clonedditController", function($scope){
           time:new Date(),
         }
       ],
-      commentCount: 1,
+      commentCount: 0,
       commentHold: 1,
       makeComment: 1,
       image:'https://s-media-cache-ak0.pinimg.com/originals/f3/93/5e/f3935ed40e62c27518e9004010b685a5.jpg',
