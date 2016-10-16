@@ -33,7 +33,7 @@
       <button ng-click="newPost()">Send Transmission</button>
     </div>
     <div class="mainContain">
-      <div ng-repeat='post in posts' class="repeatContain bottomSpacer">
+      <div ng-repeat="post in posts | orderBy:'-votes'" class="repeatContain bottomSpacer">
         <div class="postContain">
           <div class='bottomSpacer'>
             <div>
@@ -47,9 +47,20 @@
               {{post.content}}
             </div>
           </div>
-          <div class="commentButtons">
-            <button class="viewButton" ng-click="commentShow(id)" ng-init='id=post.id'>Recieve</button>
-            <button class="makeButton" ng-click="commentFormShow(id)">Transmit</button>
+          <div class='commentButtons'>
+            <div>
+              <div class='voteJustify'>
+                {{post.votes}}
+              </div>
+              <div class='align'>
+                <button class="vote up" ng-click="upVote(id)" ng-init='id=post.id'></button>
+                <button class="vote down" ng-click="downVote(id)"></button>
+              </div>
+            </div>
+            <div class='align'>
+              <button class="viewButton" ng-click="commentShow(id)" ng-init='id=post.id'>Recieve</button>
+              <button class="makeButton" ng-click="commentFormShow(id)">Transmit</button>
+            </div>
           </div>
           <div class='make' ng-show="post.makeComment % 2 == 0">
             <h1>Comment</h1>

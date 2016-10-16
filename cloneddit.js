@@ -10,6 +10,7 @@ app.controller("clonedditController", function($scope){
       author:'Ground Control',
       content:'You\'ve really made the grade. And the papers want to know who\'s shirt you wear. Now it\'s time to leave the capsule if you dare.',
       time: new Date(),
+      votes: 11,
       comments:[
         {
         id:0,
@@ -30,6 +31,7 @@ app.controller("clonedditController", function($scope){
       author:'Major Tom',
       content:'Though I\'m passed 100,000 miles, I\'m feeling very still. And I think my spaceship knows which way to go. Tell my wife I love her very much.',
       time:new Date(),
+      votes: 8,
       comments:[
         {
           id:0,
@@ -56,6 +58,7 @@ app.controller("clonedditController", function($scope){
       author:'Sputnik 2',
       content:'I am recieving you. Thanks for the dog food. I\'m somewhere above you now. Guess what Malashenkov: I took the collar off. I\'m holding my own leash and walking myself outside this door. I don\'t think I want to be your good dog anymore.',
       time:new Date(),
+      votes: 3,
       comments:[
         {
           id:0,
@@ -89,6 +92,7 @@ app.controller("clonedditController", function($scope){
     author:"",
     content:"",
     time: new Date(),
+    votes: 0,
     comments:[],
     commentCount: 1,
     commentHold: 1,
@@ -101,6 +105,14 @@ app.controller("clonedditController", function($scope){
     $scope.posts.push($scope.addPost);
     $scope.idTrack=$scope.idTrack+1;
     $scope.postForm=false;
+  };
+
+  // VOTES
+  $scope.upVote=function(postVotedOn){
+    $scope.posts[postVotedOn].votes=$scope.posts[postVotedOn].votes+1;
+  };
+  $scope.downVote=function(postVotedOn){
+    $scope.posts[postVotedOn].votes=$scope.posts[postVotedOn].votes-1;
   };
 
   // COMMENTS

@@ -8,13 +8,14 @@ span{
   flex-flow: row;
 }
 
-div > span{
-  margin-top: 1vw;
-  background-color: #A39BA8;
-}
-
 input{
   margin-bottom: 1.5vw;
+}
+
+.commentButtons{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
 }
 
 .align{
@@ -101,4 +102,23 @@ input{
   padding: 2.5vw;
   padding-top: 0vw;
   z-index: 10;
+}
+
+.vote{
+  height:2vw;
+  width: 2vw;
+  border-radius: 50%;
+  margin-right: .25vw;
+}
+
+.voteJustify{
+  margin-left: 1.95vw;
+}
+
+.up{
+  background-color: green;
+}
+
+.down{
+  background-color: red;
 }
