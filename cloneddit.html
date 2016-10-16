@@ -32,8 +32,13 @@
       </div>
       <button ng-click="newPost()">Send Transmission</button>
     </div>
+    <select  ng-model='sorter' ng-init="sorter='-votes'">
+      <option value='-votes'>Votes</option>
+      <option value='time'>Time</option>
+      <option value='title'>Title</option>
+    </select>
     <div class="mainContain">
-      <div ng-repeat="post in posts | orderBy:'-votes'" class="repeatContain bottomSpacer">
+      <div ng-repeat="post in posts | orderBy: sorter" class="repeatContain bottomSpacer">
         <div class="postContain">
           <div class='bottomSpacer'>
             <div>
