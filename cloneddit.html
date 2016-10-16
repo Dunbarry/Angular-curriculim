@@ -63,7 +63,13 @@
               </div>
             </div>
             <div class='align'>
-              <button class="viewButton" ng-click="commentShow(id)" ng-init='id=post.id'>Recieve</button>
+              <button class="viewButton" ng-click="commentShow(id)" ng-init='id=post.id'>
+                {{post.commentCount}}
+                <ng-pluralize count="post.commentCount"
+                              when="{'1': 'comment',
+                                 'other': 'comments'}">
+                </ng-pluralize>
+              </button>
               <button class="makeButton" ng-click="commentFormShow(id)">Transmit</button>
             </div>
           </div>
