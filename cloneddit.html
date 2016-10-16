@@ -8,33 +8,33 @@
   </head>
   <body ng-controller="clonedditController">
     <button ng-click="postFormReveal()">Broadcast</button>
-    <div class='make' ng-show="postForm">
+    <form name="postCreation" ng-submit="newPost()" class='make' ng-show="postForm">
       <h1>Post</h1>
       <label for='postTitle'>Title</label>
       <div>
-        <input type='text' name='postTitle' ng-model='addPost.title'></input>
+        <input type='text' name='postTitle' ng-model='addPost.title' required/>
       </div>
       <label for='postAuthor'>Username</label>
       <div>
-        <input type='text' name='postAuthor' ng-model='addPost.author'></input>
+        <input type='text' name='postAuthor' ng-model='addPost.author' required/>
       </div>
-        <label for='postContent'>Send Your Transmission:</label>
+        <label for='postContent'>Record Your Transmission:</label>
       <div>
-        <textarea rows='8' cols='100' name='postContent' ng-model='addPost.content'></textarea>
+        <textarea rows='8' cols='100' name='postContent' ng-model='addPost.content' required></textarea>
       </div>
       <label for='postImage'>Image URL</label>
       <div>
-        <input type='text' name='postImage' ng-model='addPost.image'></input>
+        <input type='url' name='postImage' ng-model='addPost.image' required/>
       </div>
       <label for='postAlt'>Image Summary</label>
       <div>
-        <input type='text' name='postAlt' ng-model='addPost.imageAlt'></input>
+        <input type='text' name='postAlt' ng-model='addPost.imageAlt' required/>
       </div>
-      <button ng-click="newPost()">Send Transmission</button>
-    </div>
+      <input type="submit" value="Send Transmission"/>
+    </form>
     <select  ng-model='sorter' ng-init="sorter='-votes'">
       <option value='-votes'>Votes</option>
-      <option value='time'>Time</option>
+      <option value='-time'>Time</option>
       <option value='title'>Title</option>
     </select>
     <div class="mainContain">
@@ -73,19 +73,19 @@
               <button class="makeButton" ng-click="commentFormShow(id)">Transmit</button>
             </div>
           </div>
-          <div class='make' ng-show="post.makeComment % 2 == 0">
+          <form name='commentCreation' class='make' ng-submit='addComment(id)' ng-show="post.makeComment % 2 == 0">
             <h1>Comment</h1>
-            <input type="text" value="post.commentCount" ng-model='newComment.id' hidden></input>
+            <input type="text" value="post.commentCount" ng-model='newComment.id' hidden/>
             <label for='author'>Username</label>
             <div>
-              <input type='text' name='author' ng-model='newComment.author'></input>
+              <input type='text' name='author' ng-model='newComment.author' required/>
             </div>
               <label for='commentContent'>Your Comment?</label>
             <div>
-              <textarea rows='4' cols='50' name='commentContent' ng-model='newComment.content'></textarea>
+              <textarea rows='4' cols='50' name='commentContent' ng-model='newComment.content' required></textarea>
             </div>
-            <button ng-click="addComment(id)">Send Reply</button>
-          </div>
+            <input type='submit' value='Send Reply'/>
+          </form>
           <div ng-repeat='comment in post.comments' class='commentContain'>
             <div ng-show="post.commentHold % 2 == 0">
               <div class="metaData">

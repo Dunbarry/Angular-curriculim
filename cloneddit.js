@@ -1,5 +1,3 @@
-console.log('Drone Online')
-
 var app = angular.module("cloneddit", []);
 
 app.controller("clonedditController", function($scope){
@@ -14,7 +12,7 @@ app.controller("clonedditController", function($scope){
       comments:[
         {
         id:0,
-        author:'Major Tom',
+        author:'This is Major Tom',
         content:'I\'m standing in the door, and I\'m floating in a most peculiar way.',
         time:new Date()
         }
@@ -27,9 +25,9 @@ app.controller("clonedditController", function($scope){
     },
     {
       id:1,
-      title:'To Ground Control',
-      author:'Major Tom',
-      content:'Though I\'m passed 100,000 miles, I\'m feeling very still. And I think my spaceship knows which way to go. Tell my wife I love her very much.',
+      title:'Past 100,000 miles',
+      author:'This is Major Tom',
+      content:'I\'m feeling very still. And I think my spaceship knows which way to go. Tell my wife I love her very much.',
       time:new Date(),
       votes: 8,
       comments:[
@@ -50,7 +48,7 @@ app.controller("clonedditController", function($scope){
       commentHold: 1,
       makeComment: 1,
       image:'http://3.bp.blogspot.com/-1wwXUsF55nI/VavipPh27BI/AAAAAAAAAa4/zE-H53Vg4EE/s1600/pale%2Bblue%2Bdot.jpg',
-      imageAlt:'Astronaut on moon swing'
+      imageAlt:'Pale Blue Dot'
     },
     {
       id:2,
@@ -94,7 +92,7 @@ app.controller("clonedditController", function($scope){
     time: new Date(),
     votes: 0,
     comments:[],
-    commentCount: 1,
+    commentCount: 0,
     commentHold: 1,
     makeComment: 1,
     image:"",
@@ -120,13 +118,12 @@ app.controller("clonedditController", function($scope){
     $scope.posts[postToAlter].commentHold=$scope.posts[postToAlter].commentHold+1;
   };
   $scope.commentFormShow=function(formToReveal){
-    console.log(formToReveal)
     $scope.posts[formToReveal].makeComment=$scope.posts[formToReveal].makeComment+1;
   };
   $scope.addComment=function(postCommentedOn){
     $scope.posts[postCommentedOn].comments.push($scope.newComment);
     $scope.posts[postCommentedOn].makeComment=$scope.posts[postCommentedOn].makeComment+1;
-    // $scope.posts[postCommentedOn].commentCount=$scope.posts[postCommentedOn].commentCount+1;
+    $scope.posts[postCommentedOn].commentCount=$scope.posts[postCommentedOn].commentCount+1;
   };
   $scope.newComment={
     id:"",
