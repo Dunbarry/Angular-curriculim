@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>cloneddit</title>
     <link rel="stylesheet" type="text/css" href="cloneddit.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
   <body ng-controller="clonedditController">
     <button ng-click="postFormReveal()">Broadcast</button>
@@ -32,14 +33,14 @@
       <button ng-click="newPost()">Send</button>
     </div>
     <div class="mainContain">
-      <div ng-repeat='post in posts' class="repeatContain">
+      <div ng-repeat='post in posts' class="repeatContain bottomSpacer">
         <div class="postContain">
           <div class='bottomSpacer'>
             <div>
-              <h1 class="topKill">< {{post.title}} ></h1>
+              <h1 class="topKill">{{post.title}}</h1>
             </div>
             <div class='metaData'>
-              <p>{{post.author}}</p>
+              <p class='align'>{{post.author}} <i id='FF'class="fa fa-microphone" aria-hidden="true"></i></p>
               <p>{{post.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>
             </div>
             <div>
@@ -52,7 +53,7 @@
           </div>
           <div class='make' ng-show="post.makeComment % 2 == 0">
             <h1>Comment</h1>
-            <input type="number" value="post.commentCount" ng-model='newComment.id' hidden></input>
+            <input type="text" value="post.commentCount" ng-model='newComment.id' hidden></input>
             <label for='author'>Username</label>
             <div>
               <input type='text' name='author' ng-model='newComment.author'></input>

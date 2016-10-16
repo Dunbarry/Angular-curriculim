@@ -73,7 +73,7 @@ app.controller("clonedditController", function($scope){
   ];
 
   // POSTS
-  $scope.idTrack=4;
+  $scope.idTrack=3;
   $scope.postForm=false;
   $scope.postFormReveal=function(){
     if($scope.postForm===false){
@@ -108,8 +108,7 @@ app.controller("clonedditController", function($scope){
     $scope.posts[postToAlter].commentHold=$scope.posts[postToAlter].commentHold+1;
   };
   $scope.commentFormShow=function(formToReveal){
-    formToReveal=formToReveal-0
-    console.log(typeof formToReveal)
+    console.log(formToReveal)
     $scope.posts[formToReveal].makeComment=$scope.posts[formToReveal].makeComment+1;
   };
   $scope.addComment=function(postCommentedOn){
