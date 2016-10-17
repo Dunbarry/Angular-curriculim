@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
   <body ng-controller="clonedditController">
+    <input type="text" ng-model="searchBox" placeholder="search">
+    <!-- <div>
+      <ul>
+        <h3>Results</h3>
+        <li ng-repeat="post in posts | filter: searchBox">
+          {{post.title}}
+        </li>
+      </ul>
+    </div> -->
     <button ng-click="postFormReveal()">Broadcast</button>
     <form name="postCreation" ng-submit="newPost()" class='make' ng-show="postForm">
       <h1>Post</h1>
@@ -38,7 +47,7 @@
       <option value='title'>Title</option>
     </select>
     <div class="mainContain">
-      <div ng-repeat="post in posts | orderBy: sorter" class="repeatContain bottomSpacer">
+      <div ng-repeat="post in posts | orderBy: sorter | filter: searchBox" class="repeatContain bottomSpacer">
         <div class="postContain">
           <div class='bottomSpacer'>
             <div>
@@ -48,7 +57,7 @@
               <p class='align'>{{post.author}} <i id='FF'class="fa fa-microphone" aria-hidden="true"></i></p>
               <p>{{post.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>
             </div>
-            <div>
+            <div ng-class='{highlight: search(id) == searchBox}'>
               {{post.content}}
             </div>
           </div>
@@ -105,6 +114,7 @@
     <!-- End Content -->
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0/angular-moment.min.js'></script>
     <script src='./cloneddit.js'></script>
   </body>
 </html>

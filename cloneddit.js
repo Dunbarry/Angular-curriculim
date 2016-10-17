@@ -1,5 +1,20 @@
 var app = angular.module("cloneddit", []);
 
+// var today=moment().startOf('day');
+// var yesterday=moment().add(-1, 'days').startOf('day')
+
+// function dayCheck(postToCheck){
+//   if(today).isSame(today){
+//     $scope.posts[postToCheck].time='Today'+$scope.posts[postToCheck].time;
+//   }
+//   else if($scope.posts[postToCheck].time.startOf('day').isSame(yesterday){
+//     $scope.posts[postToCheck].time='Yesterday'+$scope.posts[postToCheck].time;
+//   }
+//   else{
+//     $scope.posts[postToCheck].time=moment().format();
+//   }
+// }
+
 app.controller("clonedditController", function($scope){
   $scope.posts=[
     {
@@ -7,7 +22,7 @@ app.controller("clonedditController", function($scope){
       title:'To Major Tom',
       author:'Ground Control',
       content:'You\'ve really made the grade. And the papers want to know who\'s shirt you wear. Now it\'s time to leave the capsule if you dare.',
-      time: new Date(),
+      time: moment().format(),
       votes: 11,
       comments:[
         {

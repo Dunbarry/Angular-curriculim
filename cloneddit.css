@@ -146,3 +146,7 @@ select:hover{
   border-bottom-right-radius: 1em;
   margin-top: 1.5vw;
 }
+
+.highlight{
+  background-color: #23CE6B;
+}
