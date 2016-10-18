@@ -1,19 +1,4 @@
-var app = angular.module("cloneddit", []);
-
-// var today=moment().startOf('day');
-// var yesterday=moment().add(-1, 'days').startOf('day')
-
-// function dayCheck(postToCheck){
-//   if(today).isSame(today){
-//     $scope.posts[postToCheck].time='Today'+$scope.posts[postToCheck].time;
-//   }
-//   else if($scope.posts[postToCheck].time.startOf('day').isSame(yesterday){
-//     $scope.posts[postToCheck].time='Yesterday'+$scope.posts[postToCheck].time;
-//   }
-//   else{
-//     $scope.posts[postToCheck].time=moment().format();
-//   }
-// }
+var app = angular.module("cloneddit", ['angularMoment']);
 
 app.controller("clonedditController", function($scope){
   $scope.posts=[
@@ -43,7 +28,7 @@ app.controller("clonedditController", function($scope){
       title:'Past 100,000 miles',
       author:'This is Major Tom',
       content:'I\'m feeling very still. And I think my spaceship knows which way to go. Tell my wife I love her very much.',
-      time:new Date(),
+      time:moment().format(),
       votes: 8,
       comments:[
         {
@@ -70,7 +55,7 @@ app.controller("clonedditController", function($scope){
       title:'Hello',
       author:'Sputnik 2',
       content:'I am recieving you. Thanks for the dog food. I\'m somewhere above you now. Guess what Malashenkov: I took the collar off. I\'m holding my own leash and walking myself outside this door. I don\'t think I want to be your good dog anymore.',
-      time:'10/15/2016 at 1:16PM',
+      time: moment().format(),
       votes: 3,
       comments:[
         {
@@ -99,12 +84,13 @@ app.controller("clonedditController", function($scope){
       $scope.postForm=false;
     }
   };
+  $scope.newTime= Date.now()
   $scope.addPost={
     id:$scope.idTrack,
     title:"",
     author:"",
     content:"",
-    time: new Date(),
+    time: $scope.newTime,
     votes: 0,
     comments:[],
     commentCount: 0,
@@ -145,5 +131,22 @@ app.controller("clonedditController", function($scope){
     author:"",
     content:"",
     time:new Date(),
+  };
+})
+
+app.controller("switchesAndKnobs", function($scope){
+  $scope.sortSelector=function(){
+    if($('#switch').hasClass('selector2')){
+      $('#switch').removeClass('selector2');
+      $('#switch').addClass('selector1');
+    }
+    else if($('#switch').hasClass('selector1')){
+      $('#switch').removeClass('selector1');
+      $('#switch').addClass('selector3');
+    }
+    else if($('#switch').hasClass('selector3')){
+      $('#switch').removeClass('selector3');
+      $('#switch').addClass('selector2');
+    }
   };
 })

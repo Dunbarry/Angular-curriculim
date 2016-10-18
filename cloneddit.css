@@ -20,6 +20,25 @@ select:hover{
   cursor: pointer;
 }
 
+span > p{
+  margin-top: .1vw;
+  margin-bottom: .5vw;
+  margin-left: .5vw;
+  font-size: 1.5vw;
+}
+
+.forHeader{
+  height:1.5vw;
+  margin-left:2vw
+}
+
+.headerButton{
+  background-color:#EDF5FC;
+  height:2vw;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
 .commentButtons{
   display: flex;
   flex-flow: row;
@@ -147,6 +166,81 @@ select:hover{
   margin-top: 1.5vw;
 }
 
-.highlight{
-  background-color: #23CE6B;
+/*~~~~~~~~~~SORT SELECTOR~~~~~~~~~~~*/
+.nobBase{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height:5.25vw;
+  width:5.25vw;
+  border-radius:50%;
+  background-color:silver;
+  /*box-shadow: .1vw .25vw 1vw #888888;*/
+  border-top: .25vw groove silver;
+  border-left: .25vw groove silver;
+  border-bottom: .25vw ridge silver;
+  border-right: .25vw ridge silver;
+  margin-left: 3.5vw;
+}
+
+.nobMain{
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  height: 5vw;
+  width: 2vw;
+  border-radius: .35em;
+  background-color: silver;
+  box-shadow: .35vw .25vw 1vw #272D2D;
+  margin-top:.15vw;
+}
+
+.nobLine{
+  position: absolute;
+  z-index: 10;
+  height: 1.5vw;
+  width: .25vw;
+  background-color: black;
+}
+
+@-webkit-keyframes selector1{
+  0%    { -webkit-transform: rotate(45deg);}
+  100%  { -webkit-transform: rotate(-45deg);}
+}
+
+.selector1{
+  -webkit-animation-name: selector1;
+  -webkit-animation-duration: .25s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes selector2{
+  0%    { -webkit-transform: rotate(0deg);}
+  100%  { -webkit-transform: rotate(45deg);}
+}
+
+.selector2{
+  -webkit-animation-name: selector2;
+  -webkit-animation-duration: .25s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes selector3{
+  0%    { -webkit-transform: rotate(-45deg);}
+  100%  { -webkit-transform: rotate(0deg);}
+}
+
+.selector3{
+  -webkit-animation-name: selector3;
+  -webkit-animation-duration: .25s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode:forwards;
 }
