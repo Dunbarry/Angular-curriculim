@@ -8,13 +8,13 @@
   </head>
   <body ng-controller="clonedditController">
     <header class="align">
-      <div class="switchContain" ng-controller="switchesAndKnobs" ng-click="sortSelector()">
+      <div class="switchContain" ng-click="sortSelector()">
         <span class='align'>
           <p>Time</p>
           <p>|  Votes  |</p>
           <p>Title</p>
         </span>
-        <div class="nobBase selector3" id="switch">
+        <div class="nobBase selector2" id="switch">
           <div class="nobMain">
             <div class="nobLine">
             </div>
@@ -47,11 +47,11 @@
         </div>
         <input type="submit" value="Send Transmission"/>
       </form>
-      <select  ng-model='sorter' ng-init="sorter='-votes'">
+      <!-- <select  ng-model='sorter' ng-init="sorter='-votes'">
         <option value='-votes'>Votes</option>
         <option value='-time'>Time</option>
         <option value='title'>Title</option>
-      </select>
+      </select> -->
     </header>
     <div class="mainContain">
       <div ng-repeat="post in posts | orderBy: sorter | filter: searchBox" class="repeatContain bottomSpacer">

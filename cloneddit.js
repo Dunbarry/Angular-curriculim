@@ -132,21 +132,24 @@ app.controller("clonedditController", function($scope){
     content:"",
     time:new Date(),
   };
-})
 
-app.controller("switchesAndKnobs", function($scope){
+  // SORT
+  $scope.sorter= "-votes";
   $scope.sortSelector=function(){
     if($('#switch').hasClass('selector2')){
       $('#switch').removeClass('selector2');
-      $('#switch').addClass('selector1');
-    }
-    else if($('#switch').hasClass('selector1')){
-      $('#switch').removeClass('selector1');
       $('#switch').addClass('selector3');
+      $scope.sorter= "title"
     }
     else if($('#switch').hasClass('selector3')){
       $('#switch').removeClass('selector3');
+      $('#switch').addClass('selector1');
+      $scope.sorter= "-time";
+    }
+    else if($('#switch').hasClass('selector1')){
+      $('#switch').removeClass('selector1');
       $('#switch').addClass('selector2');
+      $scope.sorter= "-votes";
     }
   };
 })
