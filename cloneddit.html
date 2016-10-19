@@ -79,17 +79,17 @@
               </div>
             </div>
             <div class='align'>
-              <button class="viewButton" ng-click="commentShow(id)" ng-init='id=post.id'>
+              <button class="viewButton" ng-click="commentShow(post)" ng-init='id=post.id'>
                 {{post.commentCount}}
                 <ng-pluralize count="post.commentCount"
                               when="{'1': 'comment',
                                  'other': 'comments'}">
                 </ng-pluralize>
               </button>
-              <button class="makeButton" ng-click="commentFormShow(id)">Transmit</button>
+              <button class="makeButton" ng-click="commentFormShow(post)">Transmit</button>
             </div>
           </div>
-          <form name='commentCreation' class='make' ng-submit='addComment(id)' ng-show="post.makeComment % 2 == 0">
+          <form name='commentCreation' class='make' ng-submit='addComment(id)' ng-show="post.makeComment">
             <h1>Comment</h1>
             <input type="text" value="post.commentCount" ng-model='newComment.id' hidden/>
             <label for='author'>Username</label>
@@ -103,10 +103,10 @@
             <input type='submit' value='Send Reply'/>
           </form>
           <div ng-repeat='comment in post.comments' class='commentContain'>
-            <div ng-show="post.commentHold % 2 == 0">
+            <div ng-show="post.commentHold">
               <div class="metaData">
                 <p class="bottomKill">{{comment.author}}</p>
-                <p class="bottomKill">{{comment.time | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+                <p class="bottomKill">{{comment.time | amCalendar}}</p>
               </div>
               <p class="topKill bottomKill">&#8594; {{comment.content}}</p>
             </div>

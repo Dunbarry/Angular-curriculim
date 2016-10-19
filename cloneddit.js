@@ -18,8 +18,8 @@ app.controller("clonedditController", function($scope){
         }
       ],
       commentCount: 1,
-      commentHold: 1,
-      makeComment: 1,
+      commentHold: false,
+      makeComment: false,
       image:'http://www.kratostts.com/~/media/kratosdefense/images/interior/2%20column%20header%20images/satellite-communications.jpg',
       imageAlt:'Satelite field'
     },
@@ -45,8 +45,8 @@ app.controller("clonedditController", function($scope){
         }
       ],
       commentCount: 2,
-      commentHold: 1,
-      makeComment: 1,
+      commentHold: false,
+      makeComment: false,
       image:'http://3.bp.blogspot.com/-1wwXUsF55nI/VavipPh27BI/AAAAAAAAAa4/zE-H53Vg4EE/s1600/pale%2Bblue%2Bdot.jpg',
       imageAlt:'Pale Blue Dot'
     },
@@ -66,8 +66,8 @@ app.controller("clonedditController", function($scope){
         }
       ],
       commentCount: 0,
-      commentHold: 1,
-      makeComment: 1,
+      commentHold: false,
+      makeComment: false,
       image:'https://s-media-cache-ak0.pinimg.com/originals/f3/93/5e/f3935ed40e62c27518e9004010b685a5.jpg',
       imageAlt:'Laika'
     }
@@ -77,33 +77,42 @@ app.controller("clonedditController", function($scope){
   $scope.idTrack=3;
   $scope.postForm=false;
   $scope.postFormReveal=function(){
-    if($scope.postForm===false){
-      $scope.postForm=true;
-    }
-    else if($scope.postForm=true){
-      $scope.postForm=false;
-    }
+    $scope.postForm=!$scope.postForm;
   };
-  $scope.newTime= Date.now()
   $scope.addPost={
     id:$scope.idTrack,
     title:"",
     author:"",
     content:"",
-    time: $scope.newTime,
+    time: Date.now(),
     votes: 0,
     comments:[],
     commentCount: 0,
-    commentHold: 1,
-    makeComment: 1,
+    commentHold: false,
+    makeComment: false,
     image:"",
     imageAlt:""
   };
   $scope.newPost=function(){
     console.log($scope.addPost)
+    $scope.addPost.time=Date.now();
     $scope.posts.push($scope.addPost);
     $scope.idTrack=$scope.idTrack+1;
     $scope.postForm=false;
+    $scope.addPost={
+      id:$scope.idTrack,
+      title:"",
+      author:"",
+      content:"",
+      time: Date.now(),
+      votes: 0,
+      comments:[],
+      commentCount: 0,
+      commentHold: false,
+      makeComment: false,
+      image:"",
+      imageAlt:""
+    };
   };
 
   // VOTES
@@ -116,10 +125,10 @@ app.controller("clonedditController", function($scope){
 
   // COMMENTS
   $scope.commentShow=function(postToAlter){
-    $scope.posts[postToAlter].commentHold=$scope.posts[postToAlter].commentHold+1;
+    postToAlter.commentHold=!postToAlter.commentHold;
   };
   $scope.commentFormShow=function(formToReveal){
-    $scope.posts[formToReveal].makeComment=$scope.posts[formToReveal].makeComment+1;
+    formToReveal.makeComment=!formToReveal.makeComment;
   };
   $scope.addComment=function(postCommentedOn){
     $scope.posts[postCommentedOn].comments.push($scope.newComment);
