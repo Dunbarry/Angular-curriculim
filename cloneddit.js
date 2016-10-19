@@ -138,17 +138,23 @@ app.controller("clonedditController", function($scope){
   $scope.sortSelector=function(){
     if($('#switch').hasClass('selector2')){
       $('#switch').removeClass('selector2');
+      $('#knobMain').removeClass('knobShadow2');
       $('#switch').addClass('selector3');
+      $('#knobMain').addClass('knobShadow3');
       $scope.sorter= "title"
     }
     else if($('#switch').hasClass('selector3')){
       $('#switch').removeClass('selector3');
+      $('#knobMain').removeClass('knobShadow3');
       $('#switch').addClass('selector1');
+      $('#knobMain').addClass('knobShadow1');
       $scope.sorter= "-time";
     }
     else if($('#switch').hasClass('selector1')){
       $('#switch').removeClass('selector1');
+      $('#knobMain').removeClass('knobShadow1');
       $('#switch').addClass('selector2');
+      $('#knobMain').addClass('knobShadow2');
       $scope.sorter= "-votes";
     }
   };

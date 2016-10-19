@@ -168,7 +168,7 @@ span > p{
 }
 
 /*~~~~~~~~~~SORT SELECTOR~~~~~~~~~~~*/
-.nobBase{
+.knobBase{
   display: flex;
   justify-content: center;
   align-content: center;
@@ -176,7 +176,7 @@ span > p{
   width:5.25vw;
   border-radius:50%;
   background-color:silver;
-  /*box-shadow: .1vw .25vw 1vw #888888;*/
+  /*box-shadow: .1vw .25vw 1vw #272D2D;*/
   border-top: .25vw groove silver;
   border-left: .25vw groove silver;
   border-bottom: .25vw ridge silver;
@@ -184,7 +184,7 @@ span > p{
   margin-left: 3.5vw;
 }
 
-.nobMain{
+.knobMain{
   display: flex;
   justify-content: center;
   align-content: flex-start;
@@ -192,11 +192,11 @@ span > p{
   width: 2vw;
   border-radius: .35em;
   background-color: silver;
-  box-shadow: .35vw .25vw 1vw #272D2D;
+  box-shadow: .0vw .45vw 1vw #272D2D;
   margin-top:.15vw;
 }
 
-.nobLine{
+.knobLine{
   position: absolute;
   z-index: 10;
   height: 1.5vw;
@@ -218,9 +218,23 @@ span > p{
   -webkit-animation-fill-mode:forwards;
 }
 
+@-webkit-keyframes knobShadow1{
+  0%    {  box-shadow: .35vw .25vw 1vw #272D2D;}
+  100%  {  box-shadow: -.35vw -.05vw 1vw #272D2D;}
+}
+
+.knobShadow1{
+  -webkit-animation-name: knobShadow1;
+  -webkit-animation-duration: .25s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode:forwards;
+}
+
 @-webkit-keyframes selector2{
-  0%    { -webkit-transform: rotate(-45deg);}
-  100%  { -webkit-transform: rotate(0deg);}
+0%    { -webkit-transform: rotate(-45deg);}
+100%  { -webkit-transform: rotate(0deg);}
 }
 
 .selector2{
@@ -232,13 +246,42 @@ span > p{
   -webkit-animation-fill-mode:forwards;
 }
 
+@-webkit-keyframes knobShadow2{
+  0%    {  box-shadow: -.35vw -.05vw 1vw #272D2D;}
+  100%  {  box-shadow: .0vw .45vw 1vw #272D2D;}
+}
+
+.knobShadow2{
+  -webkit-animation-name: knobShadow2;
+  -webkit-animation-duration: .25s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode:forwards;
+}
+
 @-webkit-keyframes selector3{
-  0%    { -webkit-transform: rotate(0deg);}
-  100%  { -webkit-transform: rotate(45deg);}
+0%    { -webkit-transform: rotate(0deg);}
+100%  { -webkit-transform: rotate(45deg);}
 }
 
 .selector3{
   -webkit-animation-name: selector3;
+  -webkit-animation-duration: .25s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes knobShadow3{
+  0%    {  box-shadow: .35vw .45vw 1vw #272D2D;}
+  10%    {  box-shadow: .35vw .05vw 1vw #272D2D;}
+  100%  {  box-shadow: .35vw .05vw 1vw #272D2D;}
+}
+
+.knobShadow3{
+  -webkit-animation-name: knobShadow3;
   -webkit-animation-duration: .25s;
 	-webkit-transform-origin:50% 50%;
 	-webkit-animation-iteration-count: 1;
