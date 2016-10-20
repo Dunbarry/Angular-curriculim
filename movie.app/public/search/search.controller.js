@@ -1,6 +1,13 @@
 angular.module('movieApp')
 .controller('search', function($scope, $http, $location){
-  
+  $scope.yourMovies=[];
+  $scope.search=function(searchTerm){
+    $http.get('http://www.omdbapi.com/?s='+searchTerm+'&type=movie')
+    .then(function(results){
+      console.log(results.data.Search)
+      $scope.yourMovies=results.data.Search;
+    })
+  }
 })
 
 // $scope.create= function(){
