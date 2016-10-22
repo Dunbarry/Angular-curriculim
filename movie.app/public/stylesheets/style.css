@@ -3,9 +3,19 @@ body {
   color:#96BCBA;
 }
 
+#home:hover{
+  cursor:pointer;
+}
+
+.bottomHeavy{
+  margin-bottom: 3vw;
+}
+
 .inline{
   display: flex;
-  flex-flow: wrap;
+  flex-direction: row;
+  padding: 1vw;
+  margin-left: 9vw;
 }
 
 .mainContain{
@@ -46,4 +56,18 @@ body {
   border: .5vw groove #A39BA8;
   background-color: #465362;
   padding: .75vw;
+}
+
+.infoContain{
+  padding: 5vw;
+  padding-right: 15vw;
+  padding-top: 0vw;
+}
+
+.rotten{
+  background-color: #fcfca9;
+  border-top: .5vw groove #A39BA8;
+  border-left: .5vw groove #A39BA8;
+  border-bottom: .5vw ridge #A39BA8;
+  border-right: .5vw ridge #A39BA8;
 }

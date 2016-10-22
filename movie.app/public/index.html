@@ -7,10 +7,20 @@
     <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
   </head>
   <body>
-    <ng-view></ng-view>
+    <div class="mainContain" ng-controller="search">
+      <div class="searchContain">
+        <h1 ng-click="home()" id="home">OMDB API Search</h1>
+        <label for="searchBox" class="searchSizing">Enter a title!</label>
+        <input name="searchBox" ng-model="searchTerm" placeholder="Hit Me!" class="searchSizing"/>
+        <button ng-click="search(searchTerm)" class="searchSizing">Go!</button>
+      </div>
+      <ng-view></ng-view>
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
     <script src="/app.js"></script>
-    <script src="/search/search.controller.js"></script>
+    <script src="/movie/search.controller.js"></script>
+    <script src="/movie/roster.controller.js"></script>
+    <script src="/movie/details.controller.js"></script>
   </body>
 </html>

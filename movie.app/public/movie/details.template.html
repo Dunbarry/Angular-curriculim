@@ -1,0 +1,28 @@
+<div class="yourMoviesContain">
+  <div class="inline">
+    <div>
+      <!-- <h3>{{movieInfo.Title}} ({{movieInfo.Year}})</h3> -->
+      <img ng-src="{{movieInfo.Poster}}" alt="Poster for {{movieInfo.Title}}"/>
+    </div>
+    <div class="infoContain">
+      <h1 class="bottomHeavy">{{movieInfo.Title}} ({{movieInfo.Year}})</h1>
+      <p>Director: {{movieInfo.Director}}</p>
+      <p>Cast: {{movieInfo.Actors}}</p>
+      <p>Language: {{movieInfo.Language}}</p>
+      <p>Rating: {{movieInfo.Rated}}</p>
+      <h3>"{{movieInfo.Plot}}"</h3>
+      <label for="checkBox">Show me what Rotten Tomotos has to say!</label>
+      <input type="checkbox" ng-click="rottenSwap()"/>
+      <div ng-show="rotten" class="inline rotten">
+        <img ng-source='{{movieInfo.tomatoImage}}' alt='{{movieInfo.Title}}'/>
+        <div>
+          <p>Tomatometer: <span>{{movieInfo.tomatoMeter}}%</span></p>
+          <p>The average review gave {{movieInfo.Title}} a {{movieInfo.tomatoRating}}/10
+          <p>Tomato Consensus: "<span>{{movieInfo.tomatoConsensus}}</span>"</p>
+          <a href="{{movieInfo.tomatoURL}}">Read More</a>
+        </div>
+      </div>
+      <!-- <button ng-click="addMovie()">Sounds Interesting!</button> -->
+    </div>
+  </div>
+</div>
