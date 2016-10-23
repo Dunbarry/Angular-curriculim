@@ -1,0 +1,25 @@
+<div class='headSpace'>
+  <table>
+    <tr>
+      <th>Yummy Stuff!</th>
+      <th>Less Yummy But Relevant Stuff!</th>
+    </tr>
+    <tr ng-repeat='item in inventory'>
+      <td><img ng-src='{{item.imageUrl}}'/></td>
+      <td>
+        <h2>{{item.name}}</h2>
+        <p><span>Price:</span> {{item.price | currency:"$"}}</p>
+        <p><span>Caffeine Scale:</span> {{item.caffeineScale}}</p>
+        <p><span>Ingredients:</span> {{item.ingredients}}</p>
+        <p><span>Rating:</span> {{item.rating}}</p>
+        <p><span>In Stock:</span> {{item.inStock}}</p>
+        <p><span>Categories:</span></p>
+        <ul>
+          <li ng-repeat='descriptor in item.categories'>
+            {{descriptor}}
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>

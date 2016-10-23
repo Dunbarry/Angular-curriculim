@@ -1,0 +1,37 @@
+.mainContain{
+  display: flex;
+  flex-direction: row;
+  padding:1.5vw;
+}
+
+.headSpace{
+  margin-top: 4vw;
+}
+
+.header{
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  width: 13vw;
+  background-color: #EFD28D;
+  border-radius: 1em;
+  padding: .75vw;
+}
+
+.header > div{
+  margin-left: 5.75vw;
+}
+
+.mainTitle{
+  color: white;
+  margin:0;
+}
+
+p > span{
+  font-weight: bold;
+}
+
+th, td {
+    border: .5vw solid rgba(211, 211, 211, .20);
+}
