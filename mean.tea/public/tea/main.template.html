@@ -5,7 +5,10 @@
       <th>Less Yummy But Relevant Stuff!</th>
     </tr>
     <tr ng-repeat='item in inventory'>
-      <td><img ng-src='{{item.imageUrl}}'/></td>
+      <td>
+        <img ng-src='{{item.imageUrl}}'/>
+        <button ng-click='toCart(item)' class='cartButton'>Add to Cart</button>
+      </td>
       <td>
         <h2>{{item.name}}</h2>
         <p><span>Price:</span> {{item.price | currency:"$"}}</p>

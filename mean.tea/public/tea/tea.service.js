@@ -1,11 +1,11 @@
 angular.module('teaApp')
 .factory('teaService', function(){
   var teaService = {}
-  teaService.priceAdjust=function(price){
-    price=price.toString().split('').splice(2,0,'.').join('')
-    console.log(price)
-    return price;
-  };
+  // teaService.priceAdjust=function(price){
+  //   price=price.toString().split('').splice(2,0,'.').join('')
+  //   console.log(price)
+  //   return price;
+  // };
   teaService.inventory=[
       {
           "_id": "55c8ee82152165d244b98300",

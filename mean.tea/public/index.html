@@ -8,7 +8,7 @@
   </head>
   <body ng-app='teaApp'>
     <div class='mainContain'>
-      <div class='header'>
+      <div class='header' ng-controller='index'>
         <h2 class='mainTitle'>MEANtea!</h2>
         <div>
           <p>sort</p>
@@ -17,7 +17,7 @@
           <p>search</p>
         </div>
         <div>
-          <p>cart</p>
+          <p>cart ({{shoppingCart.length}})</p>
         </div>
       </div>
       <ng-view></ng-view>
@@ -25,7 +25,9 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
     <script src="/app.js"></script>
+    <script src="/tea/index.controller.js"></script>
     <script src="/tea/main.controller.js"></script>
     <script src="/tea/tea.service.js"></script>
+    <script src="/tea/cart.service.js"></script>
   </body>
 </html>

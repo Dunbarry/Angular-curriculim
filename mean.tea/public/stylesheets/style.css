@@ -20,7 +20,7 @@
 }
 
 .header > div{
-  margin-left: 5.75vw;
+  /*margin-left: 5.75vw;*/
 }
 
 .mainTitle{
@@ -33,5 +33,11 @@ p > span{
 }
 
 th, td {
-    border: .5vw solid rgba(211, 211, 211, .20);
+  padding: 1vw;
+  border: .5vw solid rgba(211, 211, 211, .20);
+}
+
+.cartButton{
+  background-color: #00AFB5;
+  width:100%;
 }
