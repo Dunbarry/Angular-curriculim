@@ -1,5 +1,5 @@
 angular.module('movieApp')
-.controller('search', function($scope, $http, $location){
+.controller('search', function($scope, $http, $location, watchList){
   $scope.search=function(searchTerm){
     $location.path('/roster/'+searchTerm);
   };
@@ -11,11 +11,8 @@ angular.module('movieApp')
   }
 
   // Existing List
-  $scope.watchList={};
-  $scope.addMovie=function(movieToAdd){
-    $scope.watchlist.push(movie);
-    $location.path('/');
-  };
+  $scope.List=watchList.selections;
+  // $scope.Add=watchList.addMovie;
 })
 
 // $scope.create= function(){
