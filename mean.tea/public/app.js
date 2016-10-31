@@ -7,4 +7,8 @@ angular.module('teaApp', ['ngRoute'])
     templateUrl: '/tea/main.template.html',
     controller: 'main'
   })
+  .when('/checkout',{
+    templateUrl: '/tea/checkout.template.html',
+    controller: 'cart'
+  })
 })

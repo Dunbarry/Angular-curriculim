@@ -37,6 +37,12 @@ th, td {
   border: .5vw solid rgba(211, 211, 211, .20);
 }
 
+.inline{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .cartButton{
   background-color: #00AFB5;
   width:100%;

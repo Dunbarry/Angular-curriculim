@@ -7,7 +7,13 @@
     <tr ng-repeat='item in inventory'>
       <td>
         <img ng-src='{{item.imageUrl}}'/>
-        <button ng-click='toCart(item)' class='cartButton'>Add to Cart</button>
+        <div class='inline'>
+          <label for='amount'>How Much Yummy?</label>
+          <select name='amount' ng-model='purchaseAmount' ng-init="purchaseAmount='1'">
+            <option ng-repeat="selection in [2,3,4,5,6,7,8,9,10]">{{selection}}</option>
+          </select>
+        </div>
+        <button ng-click='toCart(item, purchaseAmount)' class='cartButton'>Add to Cart</button>
       </td>
       <td>
         <h2>{{item.name}}</h2>
