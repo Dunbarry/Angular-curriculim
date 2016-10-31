@@ -1,0 +1,8 @@
+<div class="yourMoviesContain">
+  <div ng-repeat="selection in List" class="singleMovie">
+    <div id="riser" ng-click="requestDetails(selection.Title)">
+      <h3>{{selection.Title}}</h3>
+      <img ng-src="{{selection.Poster}}" alt="{selection.Title}}"/>
+    </div>
+  </div>
+</div>
